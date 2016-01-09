@@ -9,7 +9,7 @@
     do_action( 'genesis_after_header' );
     
     define( "CONTENT_WRAPPER_START" , "<section class='content_wrapper container' >" );
-    define( "CONTENT_WRAPPER_END" , "<section>" );
+    define( "CONTENT_WRAPPER_END" , "</section>" );
     
     
     echo '<script>
@@ -31,5 +31,3 @@
                     
                </script>';
     
-    
-?>

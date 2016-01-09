@@ -61,7 +61,7 @@ require_once("../ased-includes/header.php");
         </div>
         
         <div>
-        <button id="registerFormButton" type="button" >Submit</button>
+        <button id="registerFormButton" type="submit" >Submit</button>
         </div>
         
     </form>
