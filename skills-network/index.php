@@ -2,42 +2,21 @@
 
 require_once("../ased-includes/header.php");
 
+ //Connect to the database
+require_once("../ased-includes/connect.php");
 
-    echo CONTENT_WRAPPER_START;
-    
-    //This PHP, gets all users from the database. And displays them on the html
-    //#echo "<br><br>Starting MySQL <br><br>";
+echo CONTENT_WRAPPER_START;
 
-    //Connect to the database
-    $dbConnection = mysql_connect('localhost', 'inbccbtvgs_66', 'iEycCsgWNW8' ); //or die(mysql_error()); 
-
-
-    if (!$dbConnection):
-        die('Could not connect: ' . mysql_error());
-    else:
-        mysql_select_db('ased_skills_', $dbConnection);
-
-        $query = 'select * from ased_skills_.users';		//make sql query
-        $result = mysql_query($query);
-        $row = mysql_fetch_assoc($result);
-
+        $query = 'select * from users';		//make sql query
+        $result = mysqli_query($dbConnection, $query);
+        $row = mysqli_fetch_assoc($result);
         
         if($row):
-            //For each row, print row
-            $dbNumOfUsersCount = -1;
-            
-            $result = mysql_query($query, $dbConnection);
-            //$row = mysql_fetch_assoc($result); 	//Get the first row
-            
+        
             echo '<section class="row" >';
             
             //Print All users as Blocks
-            while ($row = mysql_fetch_array($result)):
-                //Get province name using "provinceID"
-                $queryProvince = "SELECT * FROM ased_skills_.provincialstructures where provinceID = '". $row["provinceID"] ."';";		//make sql query
-                $resultProvince = mysql_query($queryProvince, $dbConnection);
-                $rowProvince = mysql_fetch_assoc($resultProvince);
-                
+            do {
 ?>                
                 <section class="col-lg-4 col-md-4 col-sm-12">
                     
@@ -63,16 +42,16 @@ require_once("../ased-includes/header.php");
                         
                      </article>
                     
-                </section>
+                </section>  
             
         
         <?php
-            endwhile;
+        
+            } while ($row = mysqli_fetch_array($result));
+            
                 echo "</section>";
         endif; 
-        
-    endif;
 
-    echo CONTENT_WRAPPER_END;
+echo CONTENT_WRAPPER_END;
 
 require_once("../ased-includes/footer.php");

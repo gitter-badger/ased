@@ -53,7 +53,7 @@ require_once("../ased-includes/header.php");
         </div>
         
         <div>
-        <input class="registerFormPwd" onchange="ValidateRegistrationForm(this)" type="password" name="password1" id="password1" placeholder="Password"/>
+        <input class="registerFormPwd" type="password" name="password1" id="password1" placeholder="Password"/>
         </div>
         
         <div>

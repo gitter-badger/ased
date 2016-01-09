@@ -1,17 +1,7 @@
 <?php
-//This PHP, inserts users to the database. Thus registers users to the website
-//#echo "<br><br>Starting MySQL <br><br>";
 
 //Connect to the database
-$dbConnection = mysqli_connect('localhost', 'inbccbtvgs_66', 'iEycCsgWNW8' ); //or die(mysqli_error()); 
-
-
-if (!$dbConnection) {
-    die('Could not connect: ' . mysqli_error());}
-else{
-        mysqli_select_db($dbConnection,'ased_skills_');
-
-
+require_once("../ased-includes/connect.php");
 
     if(isset($_POST['firstname']) ){                         //If the webpage sent a Post request
         $Firstname = $_POST['firstname'];
@@ -25,8 +15,6 @@ else{
         $email = $_POST['email'];
         $password1 = $_POST['password1'];
         $password2 = $_POST['password2'];
-
-        //$userPic = $_POST['userPic'];
         
         $query = "INSERT INTO users VALUES(null,'$Firstname','$Lastname','$Skills',
                 '$Profession','$Qualifications','$Province','$City','$email','$password1','','../ased-includes/img/blackSilhouette.jpg')";
@@ -42,8 +30,6 @@ else{
      
     }
   
- }
- 
  mysqli_close($dbConnection);
 
 
