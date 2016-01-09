@@ -3,13 +3,13 @@
 //#echo "<br><br>Starting MySQL <br><br>";
 
 //Connect to the database
-$dbConnection = mysqli_connect('localhost', 'root', ''); //or die(mysqli_error()); 
+$dbConnection = mysqli_connect('localhost', 'inbccbtvgs_66', 'iEycCsgWNW8' ); //or die(mysqli_error()); 
 
 
 if (!$dbConnection) {
     die('Could not connect: ' . mysqli_error());}
 else{
-    mysqli_select_db($dbConnection,'mysitedatabase');
+        mysqli_select_db($dbConnection,'ased_skills_');
 
 
 

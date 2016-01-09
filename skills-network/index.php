@@ -9,15 +9,15 @@ require_once("../ased-includes/header.php");
     //#echo "<br><br>Starting MySQL <br><br>";
 
     //Connect to the database
-    $dbConnection = mysql_connect('localhost', 'root', ''); //or die(mysql_error()); 
+    $dbConnection = mysql_connect('localhost', 'inbccbtvgs_66', 'iEycCsgWNW8' ); //or die(mysql_error()); 
 
 
     if (!$dbConnection):
         die('Could not connect: ' . mysql_error());
     else:
-        mysql_select_db('mysitedatabase', $dbConnection);
+        mysql_select_db('ased_skills_', $dbConnection);
 
-        $query = 'select * from mysitedatabase.users';		//make sql query
+        $query = 'select * from ased_skills_.users';		//make sql query
         $result = mysql_query($query);
         $row = mysql_fetch_assoc($result);
 
@@ -34,7 +34,7 @@ require_once("../ased-includes/header.php");
             //Print All users as Blocks
             while ($row = mysql_fetch_array($result)):
                 //Get province name using "provinceID"
-                $queryProvince = "SELECT * FROM mysitedatabase.provincialstructures where provinceID = '". $row["provinceID"] ."';";		//make sql query
+                $queryProvince = "SELECT * FROM ased_skills_.provincialstructures where provinceID = '". $row["provinceID"] ."';";		//make sql query
                 $resultProvince = mysql_query($queryProvince, $dbConnection);
                 $rowProvince = mysql_fetch_assoc($resultProvince);
                 
@@ -68,7 +68,7 @@ require_once("../ased-includes/header.php");
         
         <?php
             endwhile;
-                
+                echo "</section>";
         endif; 
         
     endif;
