@@ -45,23 +45,23 @@ require_once("../ased-includes/header.php");
         </div>          
  
         <div>
-        <input class="registerForm" type="text" name="City" id="email" placeholder="City"/>
+            <input class="registerForm" type="text" name="City" id="email" placeholder="City"/>
         </div>   
         
         <div>
-        <input class="registerForm" type="text" name="email" id="email" placeholder="myname@gmail.com*"/>
+            <input class="registerForm" type="text" name="email" id="email" placeholder="myname@gmail.com*"/>
         </div>
         
         <div>
-        <input class="registerFormPwd" type="password" name="password1" id="password1" placeholder="Password"/>
+            <input class="registerFormPwd" onchange="ValidateRegistrationForm(this)" type="password" name="password1" id="password1" placeholder="Password"/>
         </div>
         
         <div>
-        <input class="registerFormPwd" type="password" name="password2" id="password2" placeholder="Confirm Passwork"/>  
+            <input class="registerFormPwd" type="password" name="password2" id="password2" placeholder="Confirm Passwork"/>  
         </div>
         
         <div>
-        <button id="registerFormButton" type="submit" >Submit</button>
+            <button id="registerFormButton" type="submit" >Submit</button>
         </div>
         
     </form>
